@@ -72,7 +72,6 @@ async function fetchAPI(
 	const input = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${stringify(
 		start,
 	)}&end_date=${stringify(end)}&api_key=DEMO_KEY`;
-	console.log(input);
 	const res = await fetch(input);
 	if (!res.ok) {
 		console.log(`Failed to fetch data: ${await res.text()}`);
@@ -86,7 +85,6 @@ export default async function Home() {
 	const asteroids = await fetchAPI("2023-06-01", new Date());
 	if (!asteroids)
 		return <div className="text-4xl text-red-700">ERROR FETCHING DATA</div>;
-	console.log(asteroids);
 	const elements = [];
 	for (const i in asteroids.near_earth_objects) {
 		elements.push(
