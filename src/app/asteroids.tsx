@@ -1,4 +1,4 @@
-import { asteroid } from "./page";
+import { asteroid } from "@/response";
 
 export function Asteroid({ asteroid }: { asteroid: asteroid }) {
 	return (
